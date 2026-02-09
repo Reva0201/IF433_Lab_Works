@@ -2,10 +2,13 @@ package oop_113059_MuhammadMeccapareva.week01
 
 fun calculateDiscount(price: Int): Int = if (price > 500000 ) (price * 0.8).toInt() else (price * 0.9).toInt()
 
-fun receipt(title: String, finalPrice: Int) {
+fun receipt(title: String, finalPrice: Int, userNote: String?) {
+    val note = userNote ?: "Tidak ada catatan"
+
     println("===== RECEIPT =====")
-    println("Game Title: $title")
+    println("Game Title : $title")
     println("Final Price: $finalPrice")
+    println("Note       : $note")
 }
 
 fun main() {
@@ -13,6 +16,8 @@ fun main() {
     val price = 799000
     val finalPrice = calculateDiscount(price)
 
-    receipt(gameTitle, finalPrice = finalPrice)
+    val userNote: String? = null
+
+    receipt(gameTitle, finalPrice = finalPrice, userNote = userNote)
 
 }
