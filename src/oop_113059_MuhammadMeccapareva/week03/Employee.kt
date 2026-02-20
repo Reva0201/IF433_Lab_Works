@@ -25,5 +25,6 @@ class Employee(val name: String) {
 
     val tax: Double
         get() = salary * 0.1
+
 }
 
