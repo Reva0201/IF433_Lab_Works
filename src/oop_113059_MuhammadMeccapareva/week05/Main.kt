@@ -48,7 +48,15 @@ fun main() {
     val payments: List<PaymentMethod> = listOf(wallet, card)
 
     for (method in payments) {
+
         method.processPayment(75000.0)
+
+        if (method is EWallet) {
+            println("Top up otomatis dilakukan...")
+            method.topUp(50000.0)
+            method.processPayment(75000.0)
+        }
+
         println("----------------------")
     }
 
